@@ -56,7 +56,8 @@
 		return TRUE
 	if(!H.assigned_squad)
 		return FALSE
-	var/expected_squad_name = squad_name_get_runtime(squad_type)
+	var/datum/squad_name_manager/manager = GLOB.squad_name_manager
+	var/expected_squad_name = manager ? manager.get_runtime_name(squad_type) : squad_type
 	if(H.assigned_squad.name == expected_squad_name)
 		return TRUE
 	if(H.assigned_squad.name == squad_type)
@@ -69,6 +70,9 @@
 
 /obj/structure/closet/secure_closet/marine_personal/proc/matches_player_for_personal_locker(mob/living/carbon/human/human)
 	if(!human)
+		return FALSE
+
+	if(!is_correct_job(human))
 		return FALSE
 
 	var/turf/human_turf = get_turf(human)
@@ -87,8 +91,6 @@
 
 		if(!is_adjacent_to_spawn)
 			return FALSE
-	else if(!is_correct_job(human))
-		return FALSE
 
 	return is_correct_squad(human)
 
