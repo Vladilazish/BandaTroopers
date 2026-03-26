@@ -1484,3 +1484,16 @@
       \u0434\u043E\u0432"
   - refactor: "\u041E\u0442\u0440\u0435\u0444\u0430\u043A\u0442\u043E\u0440\u0438\u043B\
       \ Squads modular"
+2026-03-26:
+  PhantornRU:
+  - mapadd: 'Ported HALO map content from upstream PRs #46, #96, and #107 into SS220/BandaTroopers.'
+  - mapadd: Added Mackay Station, Mackay Station (Shipmap), ONI Digsite 451, and Traxus
+      Gamma Zone to local HALO map rotation/config surfaces.
+  - mapadd: Added Pelican shuttle/dropship payload and the supporting HALO map assets
+      required by the imported content.
+  - maptweak: Adapted Mackay Station shipmap to SS220/BandaTroopers HALO platoon routing
+      and local HALO shipmap fallback behavior.
+  - code_imp: Added local compatibility support for Traxus industrial airlocks, HALO
+      secure five-tile poddoors, and Pelican-specific shuttle integrations.
+  - bugfix: Converted imported Mackay/ONI/tram shuttle DMM payload to TGM and cleaned
+      Mackay/stationhangar escapepod turf path usage for maplint compatibility.
