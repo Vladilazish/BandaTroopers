@@ -1497,3 +1497,6 @@
       secure five-tile poddoors, and Pelican-specific shuttle integrations.
   - bugfix: Converted imported Mackay/ONI/tram shuttle DMM payload to TGM and cleaned
       Mackay/stationhangar escapepod turf path usage for maplint compatibility.
+2026-03-27:
+  PiroMage:
+  - rscadd: Added something
