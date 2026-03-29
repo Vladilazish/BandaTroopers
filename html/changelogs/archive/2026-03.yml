@@ -1574,3 +1574,13 @@
   - imageadd: "\u041F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u044B\
       \ \u043D\u043E\u0432\u044B\u0435 HUD, undershirt \u0438 item assets \u0438\u0437\
       \ upstream-\u0432\u043E\u043B\u043D\u044B."
+  - mapadd: Ported five featureless maps for space, arctic, barrens, desert, and jungle
+      biome prototyping.
+  - mapadd: Added JSON and DMM payload for `featureless_space`, `lv295_featureless_arctic`,
+      `lv522_featureless_barrens`, `lv818_featureless_desert`, and `lv818_featureless_jungle`.
+  - code_imp: Wired the new featureless maps into map registry defines and marine
+      map-item routing.
+  - maptweak: Preserved current SS220 HALO rotation surfaces while merging the featureless
+      map entries into `map_config/maps.txt`.
+  - config: Updated `.github/maps_to_ignore.txt` to match the full HALO featureless
+      PR payload.
