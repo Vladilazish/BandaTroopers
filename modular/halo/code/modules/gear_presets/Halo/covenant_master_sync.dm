@@ -96,6 +96,7 @@
 	paygrades = list(PAY_SHORT_SANG_MAJOR = JOB_PLAYTIME_TIER_0)
 	role_comm_title = "SpecOps"
 	languages = list(LANGUAGE_SANGHEILI)
+	faction = FACTION_SPECOPS_SANGHEILI
 
 /datum/equipment_preset/covenant/sangheili/specops/load_gear(mob/living/carbon/human/new_human)
 	add_elite_specops(new_human)
@@ -130,6 +131,7 @@
 	paygrades = list(PAY_SHORT_SANG_ULTRA = JOB_PLAYTIME_TIER_0)
 	role_comm_title = "SpecOps Ultra"
 	languages = list(LANGUAGE_SANGHEILI)
+	faction = FACTION_SPECOPS_SANGHEILI
 
 /datum/equipment_preset/covenant/sangheili/specops_ultra/load_gear(mob/living/carbon/human/new_human)
 	add_elite_specops_ultra(new_human)
@@ -164,6 +166,7 @@
 	paygrades = list(PAY_SHORT_SANG_STEALTH = JOB_PLAYTIME_TIER_0)
 	role_comm_title = "Stealth"
 	languages = list(LANGUAGE_SANGHEILI)
+	faction = FACTION_SPECOPS_SANGHEILI
 
 /datum/equipment_preset/covenant/sangheili/stealth/load_gear(mob/living/carbon/human/new_human)
 	add_elite_stealth(new_human)
@@ -381,9 +384,16 @@
 	add_grunt_deacon(new_human)
 	new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/plasma/plasma_rifle(new_human), WEAR_J_STORE)
 
+/datum/equipment_preset/proc/add_elite_basics(mob/living/carbon/human/new_human)
+	if(!istype(new_human))
+		return
+	new_human.equip_to_slot_or_del(new /obj/item/clothing/under/marine/covenant/sangheili(new_human), WEAR_BODY)
+	new_human.equip_to_slot_or_del(new /obj/item/device/radio/headset/almayer/marine/covenant(new_human), WEAR_L_EAR)
+
 /datum/equipment_preset/proc/add_elite_minor(mob/living/carbon/human/new_human)
 	if(!istype(new_human))
 		return
+	add_elite_basics(new_human)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/suit/marine/shielded/sangheili/minor(new_human), WEAR_JACKET)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/gloves/marine/sangheili/minor(new_human), WEAR_HANDS)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/shoes/sangheili/minor(new_human), WEAR_FEET)
@@ -396,6 +406,7 @@
 /datum/equipment_preset/proc/add_elite_major(mob/living/carbon/human/new_human)
 	if(!istype(new_human))
 		return
+	add_elite_basics(new_human)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/suit/marine/shielded/sangheili/major(new_human), WEAR_JACKET)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/gloves/marine/sangheili/major(new_human), WEAR_HANDS)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/shoes/sangheili/major(new_human), WEAR_FEET)
@@ -408,6 +419,7 @@
 /datum/equipment_preset/proc/add_elite_ultra(mob/living/carbon/human/new_human)
 	if(!istype(new_human))
 		return
+	add_elite_basics(new_human)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/suit/marine/shielded/sangheili/ultra(new_human), WEAR_JACKET)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/gloves/marine/sangheili/ultra(new_human), WEAR_HANDS)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/shoes/sangheili/ultra(new_human), WEAR_FEET)
@@ -420,6 +432,7 @@
 /datum/equipment_preset/proc/add_elite_zealot(mob/living/carbon/human/new_human)
 	if(!istype(new_human))
 		return
+	add_elite_basics(new_human)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/suit/marine/shielded/sangheili/cloaking/zealot(new_human), WEAR_JACKET)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/gloves/marine/sangheili/zealot(new_human), WEAR_HANDS)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/shoes/sangheili/zealot(new_human), WEAR_FEET)
@@ -432,6 +445,7 @@
 /datum/equipment_preset/proc/add_elite_specops(mob/living/carbon/human/new_human)
 	if(!istype(new_human))
 		return
+	add_elite_basics(new_human)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/suit/marine/shielded/sangheili/cloaking/specops(new_human), WEAR_JACKET)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/gloves/marine/sangheili/specops(new_human), WEAR_HANDS)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/shoes/sangheili/specops(new_human), WEAR_FEET)
@@ -444,6 +458,7 @@
 /datum/equipment_preset/proc/add_elite_specops_ultra(mob/living/carbon/human/new_human)
 	if(!istype(new_human))
 		return
+	add_elite_basics(new_human)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/suit/marine/shielded/sangheili/cloaking/specops/ultra(new_human), WEAR_JACKET)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/gloves/marine/sangheili/specops/ultra(new_human), WEAR_HANDS)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/shoes/sangheili/specops/ultra(new_human), WEAR_FEET)
@@ -456,6 +471,7 @@
 /datum/equipment_preset/proc/add_elite_stealth(mob/living/carbon/human/new_human)
 	if(!istype(new_human))
 		return
+	add_elite_basics(new_human)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/suit/marine/shielded/sangheili/cloaking/stealth(new_human), WEAR_JACKET)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/gloves/marine/sangheili/stealth(new_human), WEAR_HANDS)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/shoes/sangheili/stealth(new_human), WEAR_FEET)
@@ -468,6 +484,7 @@
 /datum/equipment_preset/proc/add_elite_honor_guard(mob/living/carbon/human/new_human)
 	if(!istype(new_human))
 		return
+	add_elite_basics(new_human)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/suit/marine/shielded/sangheili/honor_guard(new_human), WEAR_JACKET)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/gloves/marine/sangheili/honor_guard(new_human), WEAR_HANDS)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/shoes/sangheili/honor_guard(new_human), WEAR_FEET)
@@ -520,6 +537,42 @@
 		new_human.equip_to_slot_or_del(new shoulder_path(new_human), WEAR_ACCESSORY)
 	if(bicep_path)
 		new_human.equip_to_slot_or_del(new bicep_path(new_human), WEAR_ACCESSORY)
+	ensure_grunt_full_kit(new_human, mask_rank, tank_rank, pads_rank)
+
+/datum/equipment_preset/proc/ensure_grunt_full_kit(mob/living/carbon/human/new_human, mask_rank, tank_rank, pads_rank)
+	if(!istype(new_human))
+		return
+
+	if(!new_human.head && !new_human.wear_mask)
+		var/helmet_path = text2path("/obj/item/clothing/head/helmet/marine/unggoy/[mask_rank]")
+		if(helmet_path)
+			new_human.equip_to_slot_or_del(new helmet_path(new_human), WEAR_HEAD)
+		else
+			new_human.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/unggoy(new_human), WEAR_FACE)
+
+	if(!new_human.back)
+		var/list/tank_candidates = list(
+			text2path("/obj/item/storage/backpack/covenant/unggoy/[tank_rank]/pointy"),
+			text2path("/obj/item/storage/backpack/covenant/unggoy/[tank_rank]/curlback"),
+			text2path("/obj/item/storage/backpack/covenant/unggoy/[tank_rank]/doubleprong"),
+			text2path("/obj/item/storage/backpack/covenant/unggoy/[tank_rank]/canister"),
+		)
+		for(var/tank_path in tank_candidates)
+			if(!tank_path)
+				continue
+			new_human.equip_to_slot_or_del(new tank_path(new_human), WEAR_BACK)
+			if(new_human.back)
+				break
+
+	if(!new_human.gloves)
+		var/gloves_path = text2path("/obj/item/clothing/gloves/marine/unggoy/[pads_rank]")
+		if(gloves_path)
+			new_human.equip_to_slot_or_del(new gloves_path(new_human), WEAR_HANDS)
+
+	if(!new_human.shoes)
+		var/shoes_path = text2path("/obj/item/clothing/shoes/unggoy/[pads_rank]")
+		if(shoes_path)
+			new_human.equip_to_slot_or_del(new shoes_path(new_human), WEAR_FEET)
 
 /datum/equipment_preset/proc/add_grunt_minor(mob/living/carbon/human/new_human)
 	add_grunt_rank_gear(new_human, /obj/item/clothing/suit/marine/unggoy/minor, /obj/item/storage/belt/marine/covenant/unggoy/minor, "minor", "minor", "minor")

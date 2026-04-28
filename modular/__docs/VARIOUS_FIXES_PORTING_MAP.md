@@ -71,7 +71,7 @@
 
 ## Что входит в update ветки PR94
 
-Ветка `codex/pr94-update` содержит только свежий Kig-Yar/Unggoy хвост из `PR #97`:
+Ветка `halo_jackal_spartan_wave_apr2026` после refresh от `upstream/master` содержит Kig-Yar/Unggoy хвост из `PR #97`, исходный Spartan base из `#100` и branch-local gameplay completion по preset/HumanAI/squad coverage:
 
 1. semantic equivalent `21fe2b79f4` `Update standard.dm`
    - переносится в текущие `ruuhtian` armor contracts
@@ -175,7 +175,8 @@ Main PR:
   - docs/changelog/CODEOWNERS
 
 PR94 update:
-- ветка: `codex/pr94-update`
+- ветка: `halo_jackal_spartan_wave_apr2026`
 - scope:
-  - только свежий Kig-Yar/Unggoy tail из `#97`
-  - без нового Spartan scope
+  - обновление от вмерженного `upstream/master` на `5d2ad73b68` после BT `#96`
+  - сохранение Kig-Yar/Unggoy tail из `#97` и ранее заведенного Spartan base из `#100`
+  - branch-local gameplay completion для Kig-Yar, Sangheili, Unggoy и Spartan preset/HumanAI/squad coverage по modular rules SS220
